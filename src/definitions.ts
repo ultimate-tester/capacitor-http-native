@@ -1,3 +1,5 @@
+import type {HTTPResponse} from "./HTTPResponse";
+
 export interface HTTPPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+    request(url:string, params: Record<string, any>): Promise<HTTPResponse>;
 }
