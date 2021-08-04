@@ -2,6 +2,7 @@ package com.getcapacitor;
 
 import static org.junit.Assert.*;
 
+import is.brv.capacitor.http_native.HTTPPlugin;
 import org.junit.Test;
 
 /**
@@ -12,7 +13,16 @@ import org.junit.Test;
 public class ExampleUnitTest {
 
     @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+    public void basicRequest() throws Exception {
+        HTTPPlugin plugin = new HTTPPlugin();
+
+        JSObject params = new JSObject();
+        params.put("method", "GET");
+
+        JSObject args = new JSObject();
+        args.put("url", "https://httpbin.org/get");
+        args.put("params", params);
+
+        plugin.request(new PluginCall(null, "", "", "request", args));
     }
 }

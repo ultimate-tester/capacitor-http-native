@@ -24,13 +24,12 @@ npx cap sync
 ### request(...)
 
 ```typescript
-request(url: string, params: any) => any
+request(options: HTTPRequestOptions) => any
 ```
 
-| Param        | Type                |
-| ------------ | ------------------- |
-| **`url`**    | <code>string</code> |
-| **`params`** | <code>any</code>    |
+| Param         | Type                                                              |
+| ------------- | ----------------------------------------------------------------- |
+| **`options`** | <code><a href="#httprequestoptions">HTTPRequestOptions</a></code> |
 
 **Returns:** <code>any</code>
 
@@ -38,6 +37,17 @@ request(url: string, params: any) => any
 
 
 ### Interfaces
+
+
+#### HTTPRequestOptions
+
+| Prop          | Type                |
+| ------------- | ------------------- |
+| **`url`**     | <code>string</code> |
+| **`method`**  | <code>string</code> |
+| **`body`**    | <code>string</code> |
+| **`query`**   | <code>any</code>    |
+| **`headers`** | <code>any</code>    |
 
 
 #### HTTPResponse

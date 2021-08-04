@@ -1,10 +1,11 @@
-import { registerPlugin } from '@capacitor/core';
+import {registerPlugin} from '@capacitor/core';
 
-import type { HTTPPlugin } from './definitions';
+import type {HTTPPlugin} from './definitions';
 
 const HTTP = registerPlugin<HTTPPlugin>('HTTP', {
-  web: () => import('./web').then(m => new m.HTTPWeb()),
+    web: () => import('./web').then(m => new m.HTTPWeb()),
 });
 
 export * from './definitions';
-export { HTTP };
+export {HTTP};
+export {HTTPRequestOptions} from "./HTTPRequestOptions";
